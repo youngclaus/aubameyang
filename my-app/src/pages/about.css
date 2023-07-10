@@ -1,0 +1,74 @@
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    position: absolute;
+}
+  
+.about-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #8776ff;
+}
+
+.about-description {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.app-link {
+    /*font-family: 'Carter One';*/
+    font-size: calc(12px + 2vmin);
+    position: absolute;
+    height:auto;
+    width:auto;
+    top: 15%;
+    right: 20%;
+    z-index: 2;
+  }
+
+body {
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(2,3fr);
+    gap: 1rem;
+    margin-top: 150px;
+    position:relative;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 50%;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.title-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    margin-top: 40px;
+    place-items: center;
+    border-bottom: 2px solid black;
+    max-width: 700px;
+    position: absolute;
+}
+
+.sub-title {
+    font-weight: bold;
+    color: #8776ff;
+    border-bottom: 2px solid black;
+}

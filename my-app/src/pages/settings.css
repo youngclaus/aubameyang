@@ -1,0 +1,19 @@
+.settingsMenu {
+    width: 75vw;
+    height: 75vh;
+    overflow: auto;
+    
+    position: fixed;
+    left: 12.5vw;
+    top: 12.5vh;
+    padding: 1rem;
+
+    background-color: rgb(207, 207, 207);
+    border-radius: 1rem;
+
+    text-align: center;
+}
+
+html {
+    font-family: Carter One;
+}

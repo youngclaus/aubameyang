@@ -1,0 +1,2 @@
+# allergenics
+Official allergenics repository

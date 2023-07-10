@@ -1,0 +1,18 @@
+.op {
+    position: flex;
+    text-align: center;
+    border-radius: 1rem;
+
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+FormControlLabel {
+    font: 'Carter One';
+}
+
+.slider-container {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

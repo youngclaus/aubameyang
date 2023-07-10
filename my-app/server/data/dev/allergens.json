@@ -1,0 +1,42 @@
+[
+{
+    "type": "lactose",
+    "alt": ["milk", "lactose", "dairy", "Sodium caseinate", "casein", "lactitol", "whey", "mutz", "ricotta", "cheese", "swiss"]
+},
+{
+    "type": "peanut",
+    "alt": ["peanut", "peanut oil"]
+},
+{
+    "type": "tree nuts",
+    "alt": ["tree nuts", "almond", "brazil nut", "cashew", "hazelnut", "macadamia", "pecan", "pine nut", "pistachios", "walnuts", "nut", "anacardium", "mandelona", "queenland nut"]
+},
+{
+    "type": "pork",
+    "alt": ["pork", "pancetta", "rasher", "gammon", "sowbelly", "pig", "porkbellies", "porkbelly", "bacon", "salamella", "mortadella", "Sopressat", "perpperoni", "sai ua", "salami"]
+},
+{
+    "type": "shellfish/fish",
+    "alt": ["shellfish", "shrimp", "lobster", "crab", "scallop", "mussel", "clam", "abalone", "crayfish", "crawdad", "prawn", "snail", "oyster", "whelk", "cuttlefish", "cockle", "knobbed whelk", "winkle", "urchin", "uni", "quahog", "fish"]
+},
+{
+    "type": "eggs",
+    "alt": [" egg", "omelet", "scrambled", "eggs"]
+},
+{
+    "type": "sesame",
+    "alt": ["sesame"]
+},
+{
+    "type": "soy",
+    "alt": ["soy"]
+},
+{
+    "type": "fruit",
+    "alt": ["fruit", "apple", "oranges", "peach", "kiwi", "strawberry", "strawberries", "banana", "lemon", "lime", "tomato"]
+},
+{
+    "type": "vegetables",
+    "alt": ["broccoli", "spinach", "kale", "carrot", "cabbage", "beet", "celery", "cucumber", "garlic", "lettuce", "onion", "corn"]
+}
+]
