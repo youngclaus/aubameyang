@@ -1,29 +1,18 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import logo from "../img/logoIteration2.png"
+import React from "react"
 import "./index.css"
+import Navbar from "../Components/Navbar"
+import RestaurantList from "../Components/InfoDisplay/display"
+import MapContainer from "../Components/MapElement/map"
 
 const Home = () => {
-  const [isHotspot, setHotspot] = useState(false)
-  const handleHotspot = () => {
-    setHotspot(true)
-    setTimeout(() => {
-      window.location.href = "Directory"
-    }, 1000)
-  }
   return (
     <div>
-      <div className="app-background" />
-      <div className="app-logo-container">
-        <img className="app-logo" src={logo} alt="logo" />
-        <div
-          className={`hotspot-container ${isHotspot ? "zoomed" : ""}`}
-          onClick={handleHotspot}
-        >
-          <Link to="/Directory" className="hotspot-link" />
-        </div>
+      <div>
+        <Navbar />
+        <div className="index-title">Allergenics</div>
+        <MapContainer lat={40.744781} lng={-74.025789} />
+        <RestaurantList />
       </div>
-      <p className="app-title">click to enter!</p>
     </div>
   )
 }
