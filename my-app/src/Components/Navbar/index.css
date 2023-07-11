@@ -1,3 +1,19 @@
+.app-title {
+  position: absolute;
+  height: auto;
+  width: auto;
+  left: 10vw;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  /*font-family: 'Carter One';*/
+  font-size: calc(15px + 2vmin);
+  background: linear-gradient(to right, #20bfd0 0%, #8776ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .navigation {
   width: 100%;
   height: 11vh;
@@ -5,18 +21,17 @@
   position: fixed;
   top: 0;
   z-index: 1;
-  
+
   opacity: 80%;
   background-image: linear-gradient(to top, transparent 0%, #000000 20%);
-
 }
 
 .tabs {
-    height: auto;
-    position: fixed;
-    z-index: 2;
-    top: 1.5vh;
-    right: 6vw;
-    font-size: 18px;
-    /*font-family: Carter One;*/
+  height: auto;
+  position: fixed;
+  z-index: 2;
+  top: 1.5vh;
+  right: 6vw;
+  font-size: 18px;
+  /*font-family: Carter One;*/
 }
