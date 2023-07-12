@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "./display.css"
-
 import Cookies from "universal-cookie"
 const cookies = new Cookies()
 
