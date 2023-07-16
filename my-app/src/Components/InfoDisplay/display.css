@@ -6,9 +6,9 @@
 .box-container {
   position: absolute;
   left:-30px;
-  top: 100px;
+  top: 20px;
   width: 400px;
-  height: 92vh;
+  height: 95vh;
   background: white;
   border: 0.2em #97fcf7;
   border-style: solid;
@@ -19,9 +19,10 @@
   position: absolute;
   display: flex;
   font-family: "Prompt", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   left: 50%;
-  transform: translate(-50%, -30%);
+  z-index: 10;
+  transform: translate(-50%, -40%);
   background: linear-gradient(to right, #20bfd0 0%, #8776ff 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,10 +34,11 @@
   left: 2%;
   top: 5%;
   overflow: auto;
-  max-height: 85%;
+  max-height: 92%;
   width: 83%;
   z-index: 5;
   padding-right: 10px;
+  mask-image: linear-gradient(to bottom, transparent, white 50px, white);
 }
 
 .tab {
