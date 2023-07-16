@@ -7,9 +7,6 @@ const Home = () => {
   return (
     <div>
       <div>
-        <div className="index-title-container">
-          <div className="index-title"> Allergenics</div>
-        </div>
         <MapContainer lat={40.744781} lng={-74.025789} />
         <RestaurantList />
       </div>

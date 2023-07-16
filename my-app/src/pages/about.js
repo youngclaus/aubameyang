@@ -5,6 +5,9 @@ import logo from "../Components/Navbar/logoIteration2.png"
 const AboutUs = () => {
   return (
     <div className="about-container">
+      <div className="index-title-container">
+        <div className="index-title"> Allergenics</div>
+      </div>
       <div className="title-container">
         <h1 className="about-title">About Us</h1>
         <img src={logo} alt="logo" className="logo" />

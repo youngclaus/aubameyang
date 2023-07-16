@@ -17,3 +17,58 @@
 html {
     font-family: Carter One;
 }
+
+.index-title-container {
+    height: 10vh;
+    width: 25vw;
+    top: 10px;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    left: 20px;
+    z-index: 5;
+  }
+  
+  .index-title {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Prompt", sans-serif;
+    font-size: 4vw;
+    background: linear-gradient(to right, #20bfd0 0%, #8776ff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @keyframes logo-fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes logo-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .index-title-container {
+      animation: logo-fade-out 0.5s forwards;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .index-title-container {
+      animation: logo-fade-in 0.5s backwards;
+    }
+  }
+  

@@ -3,22 +3,25 @@ import './settings.css';
 import Option from "../Components/SettingsElement/option.js"
 
 const Settings = () => {
-    return(
+    return (
         <>
+            <div className="index-title-container">
+                <div className="index-title"> Allergenics</div>
+            </div>
             <div class='settingsMenu'>
-                <Option type="Eggs"/>
-                <Option type="Fruit"/>
-                <Option type="Lactose"/>
-                <Option type="Peanuts"/>
-                <Option type="Seafood/Shellfish"/>
-                <Option type="Sesame"/>
-                <Option type="Soy"/>
-                <Option type="Tree Nuts"/>
-                <Option type="Vegetables"/>
-                <Option type="Wheat"/>
+                <Option type="Eggs" />
+                <Option type="Fruit" />
+                <Option type="Lactose" />
+                <Option type="Peanuts" />
+                <Option type="Seafood/Shellfish" />
+                <Option type="Sesame" />
+                <Option type="Soy" />
+                <Option type="Tree Nuts" />
+                <Option type="Vegetables" />
+                <Option type="Wheat" />
             </div>
         </>
-        
+
     );
 }
 
