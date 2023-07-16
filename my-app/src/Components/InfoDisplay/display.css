@@ -1,77 +1,115 @@
 * {
   font-family: "Prompt", sans-serif;
+
 }
 
-.info-container {
-  margin: "1em 0";
-  padding: "1.4em";
-  background: "#ffffff";
-  opacity: 1;
-  position: "absolute";
-  z-index: 3;
-  right: "40%";
-  top: "13%";
-  width: "50vw";
-  height: "70vh";
-  border: "0.1em #97fcf7";
-  border-style: "solid";
-  border-radius: "2rem";
-}
-
-.title {
-  color: #8776ff;
+.box-container {
   position: absolute;
-  z-index: 3;
-  top: 16%;
-  right: 4.5rem;
-  width: 270px;
-  text-decoration: underline;
+  left:-30px;
+  top: 100px;
+  width: 400px;
+  height: 92vh;
+  background: white;
+  border: 0.2em #97fcf7;
+  border-style: solid;
+  border-radius: 2rem;
 }
 
-h3.restaurant-li {
-  font-weight: bold;
-  color: black;
-  border-radius: 3px;
-  padding-left: 2px;
+.box-title {
+  position: absolute;
+  display: flex;
+  font-family: "Prompt", sans-serif;
+  font-size: 30px;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: linear-gradient(to right, #20bfd0 0%, #8776ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
 }
 
-h3.restaurant-li:hover {
+.tab-list-container {
+  position: absolute;
+  left: 2%;
+  top: 5%;
+  overflow: auto;
+  max-height: 85%;
+  width: 83%;
+  z-index: 5;
+  padding-right: 10px;
+}
+
+.tab {
+  color: #1671e9;
+  font-size: 20px;
+}
+
+.tab:hover {
   color: #8776ff;
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: rgb(252, 243, 255);
+  font-size: 23px;
 }
 
-.list {
+.breakout-container {
   position: absolute;
-  z-index: 3;
-  top: 25%;
-  right: 6rem;
-  max-height: 60vh;
-  overflow: auto;
-  width: 260px;
+  left: 110%;
+  top: 5%;
+  width: 300px;
+  height: 70vh;
+  background: white;
+  border: 0.2em #97fcf7;
+  border-style: solid;
+  border-radius: 2rem;
+  z-index: 5;
 }
 
-.dropdown {
-  margin-left: 7px;
+.breakout-menu-header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  left: 5%;
 }
 
-.Menu {
-  max-width: 60vw;
-  max-height: 40vh;
-  transform: translate(-5%, -5%);
-  overflow: auto;
+.breakout-menu-container {
+  position: absolute;
+  top: 8%;
+  overflow-wrap: break-word;
+  width: 93%;
+  height: 90%;
+  padding-left: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  background: rgb(215, 247, 255);
+  border: 0.1em #97fcf7;
+  border-style: solid;
+  border-radius: 1rem;
+}
+
+.breakout-menu-item-container {
+  padding-left: 0px;
 }
 
 .exit {
+  position: absolute;
+  right: 0%;
+  top: 30%;
   height: 1.5rem;
+  background-color: #a5fffb;
   border-color: #8776ff;
   border-radius: 5px;
   cursor: pointer;
   padding: 1px;
   padding-left: 2px;
   padding-right: 2px;
+  width: 40px;
+  text-align: center;
 }
 
 .exit:hover {
-  background-color: lightgrey;
+  background-color: lightslategray;
 }

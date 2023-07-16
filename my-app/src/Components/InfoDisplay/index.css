@@ -1,0 +1,78 @@
+* {
+    font-family: "Prompt", sans-serif;
+  }
+  
+  .info-container {
+    margin: "1em 0";
+    padding: "1.4em";
+    background: "#ffffff";
+    opacity: 1;
+    position: "absolute";
+    z-index: 3;
+    right: "40%";
+    top: "13%";
+    width: "50vw";
+    height: "70vh";
+    border: "0.1em #97fcf7";
+    border-style: "solid";
+    border-radius: "2rem";
+  }
+  
+  .title {
+    color: #8776ff;
+    position: absolute;
+    z-index: 3;
+    top: 16%;
+    right: 4.5rem;
+    width: 270px;
+    text-decoration: underline;
+  }
+  
+  h3.restaurant-li {
+    font-weight: bold;
+    color: black;
+    border-radius: 3px;
+    padding-left: 2px;
+  }
+  
+  h3.restaurant-li:hover {
+    color: #8776ff;
+    cursor: pointer;
+    background-color: lightgrey;
+  }
+  
+  .list {
+    position: absolute;
+    z-index: 3;
+    top: 25%;
+    right: 6rem;
+    max-height: 60vh;
+    overflow: auto;
+    width: 260px;
+  }
+  
+  .dropdown {
+    margin-left: 7px;
+  }
+  
+  .Menu {
+    max-width: 60vw;
+    max-height: 40vh;
+    transform: translate(-5%, -5%);
+    overflow: auto;
+  }
+  
+  .exit {
+    height: 1.5rem;
+    border-color: #8776ff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  
+  .exit:hover {
+    background-color: lightgrey;
+  }
+  

@@ -1,65 +1,9 @@
 import React, { useState } from "react"
 import "./display.css"
 import Cookies from "universal-cookie"
-const cookies = new Cookies()
 
-function Box({ children, ...props }) {
-  return <div {...props}>{children}</div>
-}
+const cookies = new Cookies();
 
-function RestaurantDetails({ restaurant, onBackClick }) {
-  const [menuData, setData] = React.useState(null)
-
-  let googleID = restaurant.place_id //static for testing
-
-  React.useEffect(() => {
-    googleID = restaurant.place_id
-    fetch(`/restaurants/${googleID}`)
-      .then((res) => res.json())
-      .then((data) => setData(data))
-  }, [])
-
-  return (
-    <Box
-      style={{
-        margin: "1em 0",
-        padding: "1.4em",
-        background: "#ffffff",
-        opacity: 1,
-        position: "absolute",
-        zIndex: 3,
-        right: "40%",
-        top: "13%",
-        width: "50vw",
-        height: "70vh",
-        border: "0.1em #97fcf7",
-        borderStyle: "solid",
-        borderRadius: "2rem",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "100%",
-        }}
-      >
-        <h3>{restaurant.name}</h3>
-        <div className="exit" onClick={onBackClick}>
-          Exit
-        </div>
-      </div>
-      <p>Address: {restaurant.vicinity}</p>
-      <p>Rating: {restaurant.rating}</p>
-      <p>Menu Items:{/*restaurant.place_id*/}</p>
-      <ul className="Menu">
-        {!menuData ? <p>Loading...</p> : menuData.map(GenMenu)}
-      </ul>
-    </Box>
-  )
-}
-
-//portion that makes the menu
 const GenMenu = (item, i) => {
   let warningString = ""
   let severity = 0
@@ -75,12 +19,47 @@ const GenMenu = (item, i) => {
     }
   })
   return (
-    <li className={`menuItem${severity}`} key={i} id={severity}>
+    <li className={`breakout-menu-item${severity}`} key={i} id={severity}>
       <h4>{item.name}</h4>
-      {item.price !== "" ? <p className="price">{item.price}</p> : null}
+      {item.price !== "" ? <p className="breakout-menu-item-price">{item.price}</p> : null}
       {item.warning.length > 0 ? <p>contains: {warningString}</p> : null}
       {item.desc !== "" ? <p>{item.desc}</p> : null}
     </li>
+  )
+}
+
+function RestaurantDetails({ restaurant, onBackClick }) {
+  const [menuData, setData] = React.useState(null)
+
+  let googleID = restaurant.place_id //static for testing
+
+  React.useEffect(() => {
+    googleID = restaurant.place_id
+    fetch(`/restaurants/${googleID}`)
+      .then((res) => res.json())
+      .then((data) => setData(data))
+  }, [])
+
+  return (
+    <div className='breakout-container'>
+      <div className='breakout-menu-header'>
+        <h3>{restaurant.name}</h3>
+        <div className="exit" onClick={onBackClick}>
+          Exit
+        </div>
+      </div>
+      <div className='breakout-menu-container'>
+        
+          <p>Address</p>
+          <div>{restaurant.vicinity}</div>
+          <p>Rating - {restaurant.rating}</p>
+          <p>Menu Items{/*restaurant.place_id*/}</p>
+          <ul className="breakout-menu-item-container">
+            {!menuData ? <div>Loading...</div> : menuData.map(GenMenu)}
+          </ul>
+        
+      </div>
+    </div>
   )
 }
 
@@ -104,16 +83,16 @@ const RestaurantList = ({ restaurants }) => {
   }
 
   return (
-    <div>
-      <h2 className="title">Nearby Restaurants</h2>
-      <ul className="list">
+    <div className='box-container'>
+      <h2 className="box-title">Allergenics</h2>
+      <ul className="tab-list-container">
         {restaurants &&
           restaurants.map((restaurant, index) => (
-            <div key={index} className="card" onClick={() => toggleCard(index)}>
-              <h3 className="restaurant-li">{restaurant.name}</h3>
+            <div key={index} className="tab" onClick={() => toggleCard(index)}>
+              <h3 className="tab-name">{restaurant.name}</h3>
               {openCardIndex === index && (
                 <div
-                  className="dropdown"
+                  className="tab-dropdown"
                   style={{ color: "#8776ff" }}
                   onClick={() => setSelectedRestaurant(restaurant)}
                 />
@@ -121,33 +100,14 @@ const RestaurantList = ({ restaurants }) => {
             </div>
           ))}
       </ul>
-      {selectedRestaurant && (
-        <RestaurantDetails
-          restaurant={selectedRestaurant}
-          onBackClick={handleBackClick}
-        />
-      )}
-      {!selectedRestaurant && (
-        <Box
-          style={{
-            margin: "1em 0",
-            padding: "1.4em",
-            background: "#ffffff",
-            opacity: 0.7,
-            position: "absolute",
-            zIndex: 2,
-            right: "5rem",
-            top: "13%",
-            width: 250,
-            height: "70vh",
-            border: "0.1em #97fcf7",
-            borderStyle: "solid",
-            borderRadius: "2rem",
-          }}
-        />
-      )}
+    {selectedRestaurant && (
+      <RestaurantDetails
+        restaurant={selectedRestaurant}
+        onBackClick={handleBackClick}
+      />
+    )}
     </div>
   )
 }
 
-export default RestaurantList
+export default RestaurantList;
