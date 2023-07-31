@@ -5,7 +5,7 @@ import settingsIcon from "./logos/sliders-solid.svg"
 import RestaurantDetails from "./info"
 
 const RestaurantList = ({ restaurants, selectedRestaurant, setSelectedRestaurant, toggleCard, onBackClick }) => {
-  const[openCardIndex, setOpenCardIndex] = useState(-1);
+  const [openCardIndex, setOpenCardIndex] = useState(-1);
   console.log(restaurants);
   return (
     <>
@@ -25,8 +25,8 @@ const RestaurantList = ({ restaurants, selectedRestaurant, setSelectedRestaurant
         </div>
         <hr />
         <div className='info-tabs-container'>
+          <h1>Find Your Restaurant</h1>
           <ul className="tab-list-container">
-            <h1>Find Your Restaurant</h1>
             {restaurants &&
               restaurants.map((restaurant, index) => (
                 <div key={index} className="tab" onClick={() => toggleCard(index)}>
