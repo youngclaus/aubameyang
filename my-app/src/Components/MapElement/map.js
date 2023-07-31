@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import "./map.css"
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react"
-import RestaurantList from "../InfoDisplay/display"
 import userIcon from "./marker.png"
 const KEY = "AIzaSyB2QVsz9q-oN1X03dSIVEbGsHanVE4hQn4"
 
@@ -19,9 +18,8 @@ export class MapContainer extends Component {
         lat: 0,
         lng: 0,
       },
-      restaurants: [],
-      restaurantsInfo: [],
     }
+    // For testing purposes only
     this.uccPos = {
       lat: 40.74379,
       lng: -74.02507,
@@ -89,10 +87,7 @@ export class MapContainer extends Component {
         restaurantsWithDistance.sort((a, b) => {
           return a.distance - b.distance
         })
-        this.setState({
-          restaurants: restaurantsWithDistance,
-        })
-        this.collectRestaurantInfo(restaurantsWithDistance)
+        this.props.onRestaurantsUpdate(restaurantsWithDistance)
         const restaurantIds = results.map((result) => result.place_id)
         console.log(restaurantIds)
       }
@@ -130,7 +125,6 @@ export class MapContainer extends Component {
   }
 
   render() {
-    console.log(this.state.userLocation)
     return (
       <div>
         <Map
@@ -148,17 +142,11 @@ export class MapContainer extends Component {
               scaledSize: new window.google.maps.Size(50, 50),
             }}
           />
-          {this.state.restaurants &&
-            this.state.restaurants.map((restaurant, index) => (
-              <Marker key={index} position={restaurant.geometry.location} />
+          {this.props.restaurants &&
+            this.props.restaurants.map((restaurant, index) => (
+              <Marker key={index} position={restaurant.geometry.location} onClick={() => this.props.toggleCard(index)} />
             ))}
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-            onClose={this.onClose}
-          ></InfoWindow>
         </Map>
-        <RestaurantList restaurants={this.state.restaurants} />
       </div>
     )
   }

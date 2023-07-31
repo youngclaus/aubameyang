@@ -30,16 +30,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-.fade-container {
-  position: absolute;
-  height: 70px;
-  width: 360px;
-  left: 50%;
-  top: 60px;
-  transform: translate(-50%);
-  background: linear-gradient(to bottom, white 20%, transparent);
-  z-index: 3;
-}
 
 .box-icons {
   position: absolute;

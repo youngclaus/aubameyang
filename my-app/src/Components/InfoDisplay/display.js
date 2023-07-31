@@ -4,25 +4,9 @@ import addressIcon from "./logos/address-card-regular.svg"
 import settingsIcon from "./logos/sliders-solid.svg"
 import RestaurantDetails from "./info"
 
-const RestaurantList = ({ restaurants }) => {
-  const [openCardIndex, setOpenCardIndex] = useState(-1)
-  const [selectedRestaurant, setSelectedRestaurant] = useState(null)
-
-  const toggleCard = async (index) => {
-    if (openCardIndex === index) {
-      setOpenCardIndex(-1)
-      setSelectedRestaurant(null)
-    } else {
-      setOpenCardIndex(index)
-      setSelectedRestaurant(restaurants[index])
-    }
-  }
-
-  const handleBackClick = () => {
-    setOpenCardIndex(-1)
-    setSelectedRestaurant(null)
-  }
-
+const RestaurantList = ({ restaurants, selectedRestaurant, setSelectedRestaurant, toggleCard, onBackClick }) => {
+  const[openCardIndex, setOpenCardIndex] = useState(-1);
+  console.log(restaurants);
   return (
     <>
       <div className='box-container'>
@@ -41,9 +25,8 @@ const RestaurantList = ({ restaurants }) => {
         </div>
         <hr />
         <div className='info-tabs-container'>
-          <h1>Find Your Restaurant</h1>
-          <div className="tab-list-container">
-          <ul>
+          <ul className="tab-list-container">
+            <h1>Find Your Restaurant</h1>
             {restaurants &&
               restaurants.map((restaurant, index) => (
                 <div key={index} className="tab" onClick={() => toggleCard(index)}>
@@ -58,14 +41,11 @@ const RestaurantList = ({ restaurants }) => {
                 </div>
               ))}
           </ul>
-          </div>
-        {selectedRestaurant && (
-          <RestaurantDetails
-            restaurant={selectedRestaurant}
-            onBackClick={handleBackClick}
-          />
-        )}
         </div>
+        {selectedRestaurant && (
+          <RestaurantDetails restaurant={selectedRestaurant} onBackClick={onBackClick} />
+
+        )}
       </div>
     </>
   )
