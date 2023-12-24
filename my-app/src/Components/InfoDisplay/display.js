@@ -13,19 +13,22 @@ const RestaurantList = ({ restaurants, selectedRestaurant, setSelectedRestaurant
         <div className='box-title-container'>
           <div className="box-title">Allergenics</div>
         </div>
-        <div className="box-icons">
-          <div>
-            <img className="icon" src={addressIcon} alt="logo" />
-            <h2>About Us</h2>
+        <div className="box-icons-container">
+          <div className="box-icons">
+            <a href="/about">
+              <img className="icon" src={addressIcon} alt="logo" />
+              <h2 className="icon_text">About Us</h2>
+            </a>
           </div>
-          <div>
-            <img className="icon" src={settingsIcon} alt="logo" />
-            <h2>User Settings</h2>
+          <div className="box-icons">
+            <a href="/settings">
+              <img className="icon" src={settingsIcon} alt="logo" />
+              <h2 className="icon_text">Settings</h2>
+            </a>
           </div>
         </div>
-        <hr />
+        <h1>Find Your Restaurant</h1>
         <div className='info-tabs-container'>
-          <h1>Find Your Restaurant</h1>
           <ul className="tab-list-container">
             {restaurants &&
               restaurants.map((restaurant, index) => (

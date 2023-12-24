@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./map.css"
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react"
 import userIcon from "./marker.png"
-const KEY = "AIzaSyB2QVsz9q-oN1X03dSIVEbGsHanVE4hQn4"
+const KEY = "AIzaSyD6ejzbYaV-cgiFO0V9a2yzs3ALSD3VZno"
 
 const style = {
   width: "100%",

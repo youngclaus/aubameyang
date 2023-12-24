@@ -18,6 +18,7 @@ const GenMenu = (item, i) => {
       severity = cookies.get(`${testAllergen}Value`)
     }
   })
+  print("Item", item)
   return (
     <li className={`breakout-menu-item${severity}`} key={i} id={severity}>
       <h4>{item.name}</h4>
@@ -26,37 +27,29 @@ const GenMenu = (item, i) => {
       {item.desc !== "" ? <p>{item.desc}</p> : null}
     </li>
   )
-}
+};
 
 function RestaurantDetails({ restaurant, onBackClick }) {
   const [menuData, setData] = React.useState(null)
 
-  let googleID = restaurant.place_id //static for testing
-
-  React.useEffect(() => {
-    googleID = restaurant.place_id
-    fetch(`/restaurants/${googleID}`)
-      .then((res) => res.json())
-      .then((data) => setData(data))
-  }, [])
+  let googleID = restaurant.place_id;
 
   return (
     <div className='breakout-container'>
       <div className='breakout-menu-header'>
-        <h3>{restaurant.name}</h3>
+        <h3 className='title'>{restaurant.name}</h3>
         <div className="exit" onClick={onBackClick}>
           Exit
         </div>
       </div>
       <div className='breakout-menu-container'>
-        
-          <p>Address</p>
-          <div>{restaurant.vicinity}</div>
-          <p>Rating - {restaurant.rating}</p>
-          <p>Menu Items{/*restaurant.place_id*/}</p>
-          <ul className="breakout-menu-item-container">
-            {!menuData ? <div>Loading...</div> : menuData.map(GenMenu)}
-          </ul>
+        <div className="smalltext">{restaurant.vicinity}</div>
+        <div className="smalltext">Rating: {restaurant.rating}</div>
+        <div className="smalltext">{restaurant.place_id}</div>
+        <p>Menu Items</p>
+        <ul className="breakout-menu-item-container">
+          {!menuData ? <div>Loading...</div> : (menuData.map(GenMenu(googleID)))}
+        </ul>
         
       </div>
     </div>

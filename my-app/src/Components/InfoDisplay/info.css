@@ -18,6 +18,10 @@
     width: 90%;
     left: 5%;
   }
+
+  .title {
+    font-style: oblique;
+  }
   
   .breakout-menu-container {
     position: absolute;
@@ -26,7 +30,6 @@
     width: 93%;
     height: 90%;
     padding-left: 10px;
-    text-align: center;
   }
   
   p {
@@ -35,10 +38,18 @@
     border: 0.1em #97fcf7;
     border-style: solid;
     border-radius: 1rem;
+    font-style: oblique;
+    color: #1671e9;
+    text-align: center;
+  }
+
+  .smalltext {
+    height: 20px;
+    transform: translate(5%, 50%);
   }
   
   .breakout-menu-item-container {
-    padding-left: 0px;
+    padding-left: 20px;
   }
   
   .exit {
