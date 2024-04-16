@@ -52,12 +52,12 @@ export class MapContainer extends Component {
         const { latitude, longitude } = position.coords
         this.setState({
           userLocation: {
-            lat: this.uccPos.lat,
-            lng: this.uccPos.lng,
+            lat: latitude,
+            lng: longitude,
           },
         })
         // Change this from this.stuff to latitude, longitude for active user location
-        this.searchNearbyRestaurants(this.uccPos.lat, this.uccPos.lng)
+        this.searchNearbyRestaurants(latitude, longitude)
       },
       (error) => console.error(error)
     )

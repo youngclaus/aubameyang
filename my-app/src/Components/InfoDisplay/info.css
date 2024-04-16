@@ -41,6 +41,7 @@
     font-style: oblique;
     color: #1671e9;
     text-align: center;
+    transform: translate(0, 50%);
   }
 
   .smalltext {

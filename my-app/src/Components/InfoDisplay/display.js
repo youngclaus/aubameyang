@@ -6,7 +6,7 @@ import RestaurantDetails from "./info"
 
 const RestaurantList = ({ restaurants, selectedRestaurant, setSelectedRestaurant, toggleCard, onBackClick }) => {
   const [openCardIndex, setOpenCardIndex] = useState(-1);
-  console.log(restaurants);
+  //console.log(restaurants);
   return (
     <>
       <div className='box-container'>
