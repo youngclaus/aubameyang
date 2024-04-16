@@ -7,7 +7,7 @@ import Settings from "./pages/settings"
 // npm start
 // localhost:3000
 // ctrl c
-
+// branch test
 function App() {
   return (
     <BrowserRouter>
